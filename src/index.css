@@ -1,0 +1,116 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  min-height: 100%;
+  background-color: #080d1a;
+  overflow-x: hidden;
+  overflow-y: auto;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+/* Custom sleek scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(8, 13, 26, 0.8);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(34, 211, 238, 0.3);
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(34, 211, 238, 0.6);
+}
+
+canvas {
+  touch-action: none;
+  outline: none;
+}
+
+/* Custom glowing effects */
+.glow-cyan {
+  box-shadow: 0 0 25px rgba(34, 211, 238, 0.4), inset 0 0 15px rgba(34, 211, 238, 0.2);
+}
+
+.text-glow-cyan {
+  text-shadow: 0 0 12px rgba(34, 211, 238, 0.6);
+}
+
+.text-glow-rust {
+  text-shadow: 0 0 12px rgba(200, 80, 56, 0.5);
+}
+
+/* CRT Scanline Overlay */
+.crt-scanlines {
+  background: linear-gradient(
+    rgba(18, 16, 28, 0) 50%,
+    rgba(0, 0, 0, 0.35) 50%
+  ),
+  linear-gradient(
+    90deg,
+    rgba(255, 0, 0, 0.02),
+    rgba(0, 255, 0, 0.01),
+    rgba(0, 0, 255, 0.02)
+  );
+  background-size: 100% 4px, 3px 100%;
+}
+
+/* Panel edge flicker keyframes simulating live holographic terminal feed */
+@keyframes edgeFlicker {
+  0%, 100% {
+    border-color: rgba(34, 211, 238, 0.35);
+    box-shadow: 0 0 25px rgba(6, 182, 212, 0.12), inset 0 0 15px rgba(6, 182, 212, 0.05);
+  }
+  25% {
+    border-color: rgba(34, 211, 238, 0.55);
+    box-shadow: 0 0 32px rgba(6, 182, 212, 0.25), inset 0 0 20px rgba(6, 182, 212, 0.1);
+  }
+  48% {
+    border-color: rgba(34, 211, 238, 0.25);
+    box-shadow: 0 0 18px rgba(6, 182, 212, 0.08), inset 0 0 8px rgba(6, 182, 212, 0.03);
+  }
+  50% {
+    border-color: rgba(56, 189, 248, 0.7);
+    box-shadow: 0 0 40px rgba(56, 189, 248, 0.3), inset 0 0 22px rgba(56, 189, 248, 0.15);
+  }
+  75% {
+    border-color: rgba(34, 211, 238, 0.4);
+    box-shadow: 0 0 22px rgba(6, 182, 212, 0.15), inset 0 0 12px rgba(6, 182, 212, 0.06);
+  }
+}
+
+.panel-edge-flicker {
+  animation: edgeFlicker 4s infinite ease-in-out;
+}
+
+/* Mobile GPU performance optimizations */
+@media (max-width: 768px) {
+  /* Reduce expensive composited backdrop filters over WebGL canvas on mobile GPUs */
+  .backdrop-blur-2xl,
+  .backdrop-blur-xl,
+  .backdrop-blur-md {
+    backdrop-filter: blur(8px) !important;
+    -webkit-backdrop-filter: blur(8px) !important;
+  }
+
+  /* Simplify continuous keyframe shadow animation on mobile */
+  .panel-edge-flicker {
+    animation: none !important;
+    box-shadow: 0 0 16px rgba(6, 182, 212, 0.16) !important;
+  }
+}
+
