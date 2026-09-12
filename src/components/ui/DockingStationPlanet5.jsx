@@ -163,7 +163,7 @@ export default function DockingStationPlanet5({
 
           {/* 4. RESUME DOWNLOAD Button */}
           <a
-            href={CONTACT_DATA.resumePath}
+            href="/Ayush_Ghosh_Resume.pdf"
             download={CONTACT_DATA.resumeFilename}
             target="_blank"
             rel="noopener noreferrer"

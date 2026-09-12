@@ -215,7 +215,7 @@ export const CONTACT_DATA = {
   emailSubject: 'Mission Inquiry // Portfolio Contact',
   linkedin: 'https://www.linkedin.com/in/ayushghosh04',
   github: 'https://github.com/kira-11',
-  resumePath: '/resume.pdf',
+  resumePath: '/Ayush_Ghosh_Resume.pdf',
   resumeFilename: 'Ayush_Ghosh_Resume.pdf',
   headline: 'Initiate Contact Transmission',
   message:

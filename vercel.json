@@ -11,7 +11,7 @@
   ],
   "headers": [
     {
-      "source": "/resume.pdf",
+      "source": "/(resume.pdf|Ayush_Ghosh_Resume.pdf)",
       "headers": [
         {
           "key": "Content-Type",
