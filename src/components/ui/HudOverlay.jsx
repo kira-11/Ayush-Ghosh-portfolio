@@ -132,7 +132,7 @@ export default function HudOverlay({ telemetry, onJumpToPlanet, onToggleReducedM
               <span>BEACON: SYNC</span>
             </div>
             <span className="text-slate-700">|</span>
-            <span className="text-slate-300 font-semibold">{time || '00:00:00'} UTC</span>
+            <span className="text-slate-300 font-semibold">{time || '00:00:00'} IST</span>
           </div>
         </div>
       </header>
